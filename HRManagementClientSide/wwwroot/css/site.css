@@ -1,0 +1,223 @@
+:root {
+    --active-color: #0d6efd;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url("https://images.pexels.com/photos/3183187/pexels-photo-3183187.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.active {
+    color: var(--active-color) !important;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: white;
+}
+
+header nav {
+    width: 90%;
+}
+
+header nav .collapse {
+    flex-direction: row-reverse;
+}
+
+main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 15px;
+    place-items: center;
+    margin-top: 60px;
+}
+
+main.fullsize {
+    height: calc(100vh - 60px);
+}
+
+main .auth {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 25px;
+    padding: 25px;
+    border-radius: 8px;
+    min-width: 320px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+main .auth .top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+}
+
+main .auth .top aside span {
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+}
+
+main .auth .top aside span.active,
+main .auth .top aside span:hover {
+    color: var(--active-color);
+    transition: 0.5s ease;
+}
+
+main .auth .bottom {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 15px;
+}
+.logo {
+    width: 40px;
+    height: auto;
+    margin-right: 8px;
+}
+@keyframes gradientFadeVertical {
+    0% {
+        background-position: 50% 0%;
+    }
+
+    50% {
+        background-position: 50% 100%;
+    }
+
+    100% {
+        background-position: 50% 0%;
+    }
+}
+
+.header-bg {
+    background: linear-gradient(180deg, #1a1a1a, #343434, #1a1a1a);
+    background-size: 200% 200%;
+    animation: gradientFadeVertical 30s ease infinite;
+}
+@keyframes rainbowBorder {
+    0% {
+        border-color: red;
+    }
+
+    16.6% {
+        border-color: orange;
+    }
+
+    33.2% {
+        border-color: yellow;
+    }
+
+    49.8% {
+        border-color: green;
+    }
+
+    66.4% {
+        border-color: blue;
+    }
+
+    83% {
+        border-color: indigo;
+    }
+
+    100% {
+        border-color: violet;
+    }
+}
+.navbar-brand {
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+    color: skyblue;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-light .navbar-brand {
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+    color: skyblue;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #f8f9fa;
+}
+
+    .navbar-light .navbar-nav .nav-link.home-link {
+        border: 2px solid red;
+        border-radius: 8px;
+        padding: 6px 12px;
+        animation: rainbowBorder 6s linear infinite;
+    }
+.submitBtn {
+    border: 3px solid red;
+    animation: rainbowBorder 6s linear infinite;
+    transition: 0.5s ease;
+}
+
+    .submitBtn:hover {
+        background-color: white;
+        color: black;
+        border-color: transparent;
+        box-shadow: 0 0 0 3px red;
+        animation: none;
+    }
+.nav-link.active {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+    .nav-link.active:hover {
+        font-size: 16px;
+    }
+.nav-link.log-in {
+    font-family: 'Rubik Pixels', cursive;
+    font-size: 1rem;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    padding: 10px 20px;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+    .nav-link.log-in:hover {
+        font-size: 1.2rem;
+        color: red;
+        border-color: #fff;
+    }
+.hr-login-page {
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+.footer-custom {
+    background-color: rgba(255, 255, 255, 0.7); /* white with 70% transparency */
+    color: black;
+}
+.register-form {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 30px;
+    border-radius: 5px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.body1 {
+    background-image: url('https://th.bing.com/th/id/OIP.94YO_ODYA2yWyhsQPY2yUQHaFd?pid=ImgDet&rs=1');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
