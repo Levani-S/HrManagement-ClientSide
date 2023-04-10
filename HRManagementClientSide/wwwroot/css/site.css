@@ -204,7 +204,7 @@ main .auth .bottom {
     margin: 0;
 }
 .footer-custom {
-    background-color: rgba(255, 255, 255, 0.7); /* white with 70% transparency */
+    background-color: rgba(255, 255, 255, 0.7);
     color: black;
 }
 .register-form {
@@ -220,4 +220,102 @@ main .auth .bottom {
     background-repeat: no-repeat;
     background-position: center center;
 }
+.middle {
+    text-align: center;
+}
 
+.navbar-custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-toggler {
+    order: 1;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 3s;
+}
+
+.title {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeOut 3s forwards;
+}
+
+.buttons button {
+    font-size: 24px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.title {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: colorChange 5s infinite, fadeOut 3s 2s infinite alternate;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        color: blue;
+    }
+
+    25% {
+        color: pink;
+    }
+
+    50% {
+        color: yellow;
+    }
+
+    75% {
+        color: red;
+    }
+
+    100% {
+        color: blue;
+    }
+}
+.indexbody {
+    background-image: url('https://www.wns.com/Portals/0/Images/HeaderBanner/desktop/3747/175/HR-Analytics-HD.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

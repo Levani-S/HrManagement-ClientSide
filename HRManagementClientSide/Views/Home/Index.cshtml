@@ -1,66 +1,54 @@
-﻿@model UserLoginViewModel
-@{
+﻿@{
     ViewData["Title"] = "Home";
 }
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="site.css">
+    <title>Human Resources</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <style>
+        .container1 {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 30px 50px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .buttons2 button {
+            font-size: 24px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #00a550;
+            color: black;
+            border: none;
+            border-radius: 5px;
+        }
+
+            .buttons button:hover {
+                background-color: #008a40;
+            }
+    </style>
 </head>
-<body>
-    <header class="flex-center header-bg">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="./index.html">
-                    <img src="https://www.freelogoservices.com/blog/wp-content/uploads/transparent-logo.jpg" alt="HRManagement Logo" class="logo"> Human Resources
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active sign-up submitBtn" href="/Accounts/RegistrationForm">Sign up</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <form>
-    <main class="fullsize">
-        <section class="auth">
-            <aside class="top">
-                <p class="hr-login-page">Hr Login Page</p>
-            </aside>
-            <aside class="bottom">
-                
-                <div class="form-group login">
-                    <label for="nameInput" class="form-label">Username</label>
-                        <input  asp-for="UserName" name="UserName" class="form-control" type="text" placeholder="Enter your username or E-Mail" id="nameInput">
-                </div>
-                <div class="form-group">
-                    <label for="passwordInput" class="form-label">Password</label>
-                        <input asp-for="Password" name="Password" class="form-control" type="password" placeholder="Enter your password" id="passwordInput">
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-primary" id="submitBtn">Sign up</button>
-                </div>
-                </>
-            </aside>
-        </section>
-    </main>
-    <</form>
-    <footer class="border-top footer text-muted footer-custom">
-        <div class="container">
-            &copy; 2023 - HR Management - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+<body class="indexbody">
+    <div class="container1">
+        <h1 class="title">Welcome to Human Resources</h1>
+        <div class="buttons2">
+            <a href="/Accounts/LoginForm"><button>Log In</button></a>
+            <a href="/Accounts/RegistrationForm"><button>Sign Up</button></a>
+        </div>
+    </div>
+        <footer class="border-top footer text-muted footer-custom">
+    <div class="footer">
+            &copy; 2023 - HR Management - <a asp-area="" asp-controller="Accounts" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
 </body>
 </html>
-
