@@ -32,22 +32,22 @@
             border-radius: 5px;
         }
 
-            .buttons button:hover {
-                background-color: #008a40;
-            }
+        .buttons button:hover {
+            background-color: #008a40;
+        }
     </style>
 </head>
 <body class="indexbody">
     <div class="container1">
         <h1 class="title">Welcome to Human Resources</h1>
         <div class="buttons2">
-            <a href="/Accounts/LoginForm"><button>Log In</button></a>
-            <a href="/Accounts/RegistrationForm"><button>Sign Up</button></a>
+            <button onclick="window.location.href='/Accounts/LoginForm'">Log In</button>
+            <button onclick="window.location.href='/Accounts/RegistrationForm'">Sign Up</button>
         </div>
     </div>
-        <footer class="border-top footer text-muted footer-custom">
-    <div class="footer">
-            &copy; 2023 - HR Management - <a asp-area="" asp-controller="Accounts" asp-action="Privacy">Privacy</a>
+    <footer class="border-top footer text-muted footer-custom">
+        <div class="footer">
+            &copy; 2023 - HR Management - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
 </body>

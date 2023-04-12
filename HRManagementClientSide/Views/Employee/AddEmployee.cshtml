@@ -1,0 +1,116 @@
+﻿@model HRManagementClientSide.Models.EmployeeModel
+@{
+    ViewData["Title"] = "Add Employee";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Resources Employee</title>
+    <link rel="stylesheet" href="~/css/AddEmployee.css" />
+    <style>
+        .form-columns {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form-column {
+            width: 48%;
+        }
+    </style>
+</head>
+<body>
+    <header class="flex-center header-bg">
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <div class="container-fluid">
+                <a class="navbar-brand">
+                    <img src="https://www.freelogoservices.com/blog/wp-content/uploads/transparent-logo.jpg" alt="HRManagement Logo" class="logo"> Human Resources
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <form asp-controller="Accounts" asp-action="Logout" name="Logout" class="form-inline">
+                                <button class="nav-link active sign-up submitBtn">Log Out</button>
+                            </form>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <form asp-controller="Employee" asp-action="EmployeeList" class="form-inline">
+                                <button class="nav-link active sign-up submitBtn">Employee's List</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+    <div class="form-container">
+        <h2>Add Employee</h2>
+        <form asp-action="CreateEmployee" method="post">
+            <div class="form-columns">
+                <div class="form-column">
+                    <div class="form-group">
+                        <label asp-for="IdentifyNumber">ID Number</label>
+                        <input asp-for="IdentifyNumber" class="form-control" />
+                        <span asp-validation-for="IdentifyNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FirstName">First Name</label>
+                        <input asp-for="FirstName" class="form-control" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LastName">Last Name</label>
+                        <input asp-for="LastName" class="form-control" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="BirthDate">Birth Date</label>
+                        <input asp-for="BirthDate" type="date" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Position">Position</label>
+                        <input asp-for="Position" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-column">
+                    <div class="form-group">
+                        <label asp-for="Status">Status</label>
+                        <input asp-for="Status" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email">Email</label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ReleaseDate">Release Date</label>
+                        <input asp-for="ReleaseDate" type="date" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PhoneNumber">Phone Number</label>
+                        <input asp-for="PhoneNumber" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="GenderId">Gender</label>
+                            <select asp-for="GenderId" class="form-control">
+                                <option value="">-- Select Gender --</option>
+                                <option value="0C5C21F2-EAB4-41D7-9EA4-87CB99BD0325">Male</option>
+                                <option value="E4361419-3C2D-4DC8-AD92-18E423C9E0A6">Female</option>
+                            </select>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

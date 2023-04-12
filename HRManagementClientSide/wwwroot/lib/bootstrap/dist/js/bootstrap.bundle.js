@@ -593,7 +593,7 @@
       }
 
       if (defaultPrevented) {
-        evt.preventDefault();
+        evt;
       }
 
       if (nativeDispatch) {

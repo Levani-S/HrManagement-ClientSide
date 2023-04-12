@@ -1,17 +1,16 @@
 ﻿using HRManagementClientSide.Models;
+using HRManagementClientSide.Services;
 using HRManagementClientSide.Services.ServiceInterfaces;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 
 namespace HRManagementClientSide.Controllers
 {
     public class AccountsController : Controller
     {
-        private readonly ILogger<AccountsController> _logger;
         private readonly IAccountsService _accountsService;
-        public AccountsController(ILogger<AccountsController> logger,IAccountsService accountsService)
+        public AccountsController(IAccountsService accountsService)
         {
-            _logger = logger;
             _accountsService = accountsService;
         }
 
@@ -28,35 +27,44 @@ namespace HRManagementClientSide.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                return View("RegistrationForm", model);
             }
+
             var result = await _accountsService.Register(model);
-            if (result)
-            {
-                return RedirectToAction("GetAllEmployee", "Employee");
-            }
-            else
-            {
-                return RedirectToAction("RegistrationForm");
-            }
-        }
-        [HttpPost]
-        public async Task<IActionResult> LogInAsync(UserLoginViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-            var result = await _accountsService.LogInAsync(model);
             if (result)
             {
                 return RedirectToAction("EmployeeList", "Employee");
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                ModelState.AddModelError(string.Empty, "User already exists with that Username or E-mail please Log-In");
+                return View("RegistrationForm", model);
             }
+        }
+        [HttpPost]
+        public async Task<IActionResult> LogIn(UserLoginViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("LoginForm", model);
+            }
+            var result = await _accountsService.LogIn(model);
+            if (result)
+            {
+                return RedirectToAction("EmployeeList", "Employee");
+            }
+            else
+            {
+                ModelState.AddModelError("", "User or Password is incorrect");
+                return View("LoginForm", model);
+            }
+        }
+        public IActionResult Logout()
+        {
+            _accountsService.LogOut();
+            return RedirectToAction("Index", "Home");
         }
     }
 }
+
 
